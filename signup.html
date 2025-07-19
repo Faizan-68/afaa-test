@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Afaa Elevate Digital Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="navbar">
+  <div class="nav-logo">
+     <a href="main.html"> <img src="Media/logo.png" alt="Afaa Elevate Logo" /></a>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="main.html" class="nav-link">Home</a>
+      <a href="courses.html" class="nav-link">Courses</a>
+      <a href="user_dashboard.html" class="nav-link">Dashboard</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-btn">Other ▼</a>
+        <div class="dropdown-content">
+          <a href="commission.html">Commissions</a>
+          <a href="team_reward.html">Team Rewards</a>
+          <a href="payments.html">Payments</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="login-signup">
+      <a href="login.html" class="login-btn-liquid">Login</a>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <section class="signup-section">
+    <div class="signup-container">
+      <div class="signup-card">
+        <h2>Join Afaa Elevate</h2>
+        <p class="auth-subtext">Start your digital learning journey today</p>
+        
+        <form class="signup-form">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a password" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+          </div>
+          
+          <div class="form-check">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+          
+          <button type="submit" class="auth-btn">Create Account</button>
+          
+          <div class="auth-divider">
+            <span>or</span>
+          </div>
+          
+          <div class="social-login">
+            <button type="button" class="social-btn google">
+              <img src="Media/google-icon.svg" alt="Google"> Continue with Google
+            </button>
+          </div>
+          
+          <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+        </form>
+      </div>
+      
+      <div class="signup-hero">
+        <img style="opacity: 0.9;" src="Media/signup.jpg" alt="Digital Learning">
+        <div class="signup-quote">
+          <h3>Start Earning While Learning</h3>
+          <p>Get access to premium resources and start your freelancing journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
