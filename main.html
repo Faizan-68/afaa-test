@@ -79,7 +79,7 @@
         <div class="plan-point">24/7 WhatsApp Support</div>
         <div class="plan-point">Lifetime Access to All Content</div>
         <div class="plan-point">Start Learning and Unlock Your Earning Journey</div>
-         <a class="enroll-btn" href="payments.html">Enroll & Start Earning Now</a>
+         <a hre class="enroll-btn" href="payments.html">Enroll & Start Earning Now</a>
       </div>
 
       <div class="plan-card standard">
@@ -206,9 +206,7 @@
   </div> -->
   </section>
 
-
-
-
+  
   <section id="review" class="testimonial-section">
     <h2 class="testimonial-heading">What Learners Say About Afaa Elevate</h2>
     <div class="testimonial-container">
@@ -259,6 +257,7 @@
         <h3 class="footer-title">Legal</h3>
         <a href="#" class="footer-btn">Terms & Conditions</a>
         <a href="#" class="footer-btn">Privacy Policy</a>
+        <a href="Media/fbr-registration.pdf" class="footer-btn" download>FBR Registration</a>
       </div>
 
       <div class="footer-section social-section">
@@ -275,6 +274,16 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <!-- Invite a Friend Button -->
+  <button class="invite-friend-btn" id="inviteFriendBtn">
+    <span>🤝 Invite a Friend</span>
+  </button>
+  <script>
+  document.getElementById('inviteFriendBtn').onclick = function() {
+    const msg = encodeURIComponent('Hey! Join me at Afaa Elevate Digital Academy for amazing courses. Use my referral code AFAA1234 to sign up: https://your-website.com');
+    window.open('https://wa.me/?text=' + msg, '_blank');
+  };
+  </script>
 </body>
 
 </html>

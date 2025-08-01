@@ -6,137 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Afaa Elevate Courses</title>
   <link rel="stylesheet" href="main.css" />
-  <style>
-    .courses-section {
-      padding: 60px 20px;
-      background: #f8f8f8;
-    }
-
-    .courses-heading {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .plan-courses-block {
-      margin-bottom: 50px;
-    }
-
-    .plan-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 18px;
-      text-align: left;
-    }
-
-    .courses-row {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .course-box {
-      width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      font-family: sans-serif;
-      margin: 20px auto;
-    }
-
-    .thumbnail {
-      width: 100%;
-      height: 150px;
-      background-color: #eee;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-      display: block;
-    }
-
-    .course-title {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    .course-description {
-      max-height: 60px;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-
-    .course-description.expanded {
-      max-height: 500px;
-    }
-
-    .see-more-btn {
-      background: none;
-      border: none;
-      color: #007bff;
-      cursor: pointer;
-      padding: 0;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    .start-learning-btn {
-      display: block;
-      margin-top: 10px;
-      padding: 8px 15px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      background: linear-gradient(45deg, #28a745, #218838);
-      color: white;
-      font-weight: bold;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .start-learning-btn:hover {
-      background: linear-gradient(45deg, #218838, #1e7e34);
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-
-
-
-    @media (max-width: 900px) {
-      .courses-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
-
-      .plan-title {
-        font-size: 1.3rem;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .courses-section {
-        padding: 20px 2px;
-      }
-
-      .plan-title {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
 </head>
 
-<body>
+<body class="courses-page">
   <header class="navbar">
     <div class="nav-logo">
       <a href="main.html"> <img src="Media/logo.png" alt="Afaa Elevate Logo" /></a>
@@ -180,7 +52,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
 
         <div class="course-box">
@@ -192,7 +64,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -203,7 +75,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
       </div>
     </div>
@@ -220,7 +92,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -231,7 +103,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -242,7 +114,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
       </div>
     </div>
@@ -261,7 +133,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -272,7 +144,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -283,7 +155,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
       </div>
     </div>
@@ -300,7 +172,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -311,7 +183,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
         <div class="course-box">
           <div class="thumbnail"></div>
@@ -322,7 +194,7 @@
             experienced coders alike who want to solidify their Python skills for real-world applications and projects.
           </p>
           <button class="see-more-btn">See More</button>
-          <button class="start-learning-btn">Start Learning</button>
+          <a class="start-learning-btn" href="user_dashboard.html">Start Learning</a>
         </div>
       </div>
     </div>
@@ -339,6 +211,7 @@
         <h3 class="footer-title">Legal</h3>
         <a href="#" class="footer-btn">Terms & Conditions</a>
         <a href="#" class="footer-btn">Privacy Policy</a>
+        <a href="Media/fbr-registration.pdf" class="footer-btn" download>FBR Registration</a>
       </div>
       <div class="footer-section social-section">
         <h3 class="footer-title">Follow Us</h3>
@@ -361,6 +234,12 @@
       });
     });
   </script>
+  <script>
+document.getElementById('inviteFriendBtn').onclick = function() {
+  const msg = encodeURIComponent('Hey! Join me at Afaa Elevate Digital Academy for amazing courses. Use my referral code AFAA1234 to sign up: https://your-website.com');
+  window.open('https://wa.me/?text=' + msg, '_blank');
+};
+</script>
   <script src="script.js"></script>
 </body>
 

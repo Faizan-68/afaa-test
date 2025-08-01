@@ -5,165 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Afaa Elevate - Videos & Commission Section</title>
   <link rel="stylesheet" href="main.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    html, body {
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      overflow-x: hidden;
-    }
-
-    /* First Video Full Width */
-    .video-section {
-      width: 100%;
-      height: auto;
-    }
-.video-section video {
-  width: 100%;
-  height: 100vh;
-  display: block;
-  object-fit: cover;
-  background: black; 
-  object-position: center center;
-}
-
-
-    /* Commission Section */
-    .commission-section {
-      position: relative;
-      min-height: 100vh;
-      padding: 80px 20px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: white;
-    }
-
-    /* Background Video Container */
-    .bg-video-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .bg-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.2 );
-      pointer-events: none;
-    }
-
-.commission-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  max-width: 1000px;
-  z-index: 1;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.commission-grid > * {
-  flex: 1 1 250px;
-  max-width: 300px;
-  box-sizing: border-box;
-}
-
-
-    .commission-box {
-      background: rgba(0, 102, 204, 0.247);
-      padding: 20px;
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
-      min-height: 340px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .commission-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .commission-box h3 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 12px;
-      text-align: center;
-      color: #e5f4ff;
-    }
-
-    .commission-box p {
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .commission-box p strong {
-      display: block;
-      margin-top: 5px;
-      font-weight: bold;
-    }
-
-    .commission-box em {
-      margin-top: auto;
-      font-style: normal;
-      color: #e0f0ff;
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .commission-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 768px) {
-      .video-section video {
-        height: 50vh;
-        min-height: 200px;
-        max-height: 50vh;
-      }
-    }
-    @media (max-width: 480px) {
-      .video-section video {
-        height: 35vh;
-        min-height: 120px;
-        max-height: 35vh;
-      }
-    }
-    @media (max-width: 375px) {
-      .video-section video {
-        height: 28vh;
-        min-height: 90px;
-        max-height: 28vh;
-      }
-    }
-    @media (max-width: 320px) {
-      .video-section video {
-        height: 22vh;
-        min-height: 60px;
-        max-height: 22vh;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="commission-page">
 
       <header class="navbar">
   <div class="nav-logo">
@@ -274,6 +117,10 @@
 
   </section>
 
+  <!-- Invite a Friend Button -->
+  <button class="invite-friend-btn" id="inviteFriendBtn">
+    <span>🤝 Invite a Friend</span>
+  </button>
 
 <footer class="footer">
   <div class="footer-container">
@@ -290,6 +137,7 @@
       <h3 class="footer-title">Legal</h3>
       <a href="#" class="footer-btn">Terms & Conditions</a>
       <a href="#" class="footer-btn">Privacy Policy</a>
+      <a href="Media/fbr-registration.pdf" class="footer-btn" download>FBR Registration</a>
     </div>
 
     <div class="footer-section social-section">
@@ -307,6 +155,12 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+document.getElementById('inviteFriendBtn').onclick = function() {
+  const msg = encodeURIComponent('Hey! Join me at Afaa Elevate Digital Academy for amazing courses. Use my referral code AFAA1234 to sign up: https://your-website.com');
+  window.open('https://wa.me/?text=' + msg, '_blank');
+};
+</script>
 </body>
 </html>
  

@@ -6,433 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Afaa Elevate - Team Reward Dashboard</title>
     <link rel="stylesheet" href="main.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #f8f8f8;
-            overflow-x: hidden;
-            padding-top: 80px;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            padding: 40px 20px;
-        }
-
-        .plans-heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .plans-heading h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 10px;
-        }
-
-        .plans-heading .subheading {
-            font-size: 1.1rem;
-            color: #64748b;
-        }
-
-        .plans-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .plan-card {
-            background: #e6f4f1;
-            border-radius: 16px;
-            padding: 40px 30px;
-            width: 260px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .plan-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #0f172a;
-            text-align: center;
-            width: 100%;
-        }
-
-        .testimonial-container {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .testimonial-box {
-            background-color: #fefefe;
-            border-left: 5px solid #42a5f5;
-            border-radius: 12px;
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-            padding: 25px 20px;
-            flex: 1 1 300px;
-            max-width: 350px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .testimonial-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
-            background-color: #f1f8ff;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .reward-amount {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .reward-earned {
-            color: #10b981;
-        }
-
-        .reward-conditions {
-            color: #f59e0b;
-        }
-
-        .reward-inprogress {
-            color: #ef4444;
-        }
-
-        .reward-status {
-            float: right;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .progress-bar {
-            margin: 10px 0;
-            background: #e2e8f0;
-            border-radius: 4px;
-            height: 8px;
-            width: 100%;
-        }
-
-        .progress-fill-earned {
-            height: 8px;
-            background: linear-gradient(90deg, #38bdf8, #10b981);
-            border-radius: 4px;
-            width: 100%;
-        }
-
-        .progress-fill-conditions {
-            height: 8px;
-            background: linear-gradient(90deg, #f59e0b, #fbbf24);
-            border-radius: 4px;
-            width: 100%;
-        }
-
-        .progress-fill-inprogress-50 {
-            height: 8px;
-            background: linear-gradient(90deg, #ef4444, #fca5a5);
-            border-radius: 4px;
-            width: 50%;
-        }
-
-        .progress-fill-inprogress-30 {
-            height: 8px;
-            background: linear-gradient(90deg, #ef4444, #fca5a5);
-            border-radius: 4px;
-            width: 30%;
-        }
-
-        .progress-fill-inprogress-15 {
-            height: 8px;
-            background: linear-gradient(90deg, #ef4444, #fca5a5);
-            border-radius: 4px;
-            width: 15%;
-        }
-
-        .reward-conditions-row {
-            margin-top: 10px;
-        }
-
-        .reward-conditions-met {
-            color: #10b981;
-        }
-
-        .reward-conditions-pending {
-            color: #ef4444;
-        }
-
-        .reward-conditions-advance {
-            color: #10b981;
-        }
-
-        .reward-conditions-pro {
-            color: #ef4444;
-        }
-
-        @media (max-width: 850px) {
-            .navbar {
-                padding: 10px 3%;
-            }
-
-            .nav-links {
-                gap: 15px;
-            }
-
-            .login-btn-liquid {
-                padding: 10px 20px;
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 10px 20px;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: flex-start;
-                background: #e6f4f1;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                padding: 15px;
-                z-index: 999;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease-in-out;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links .nav-link,
-            .nav-links .dropdown {
-                width: 100%;
-                text-align: left;
-                padding: 10px 0;
-            }
-
-            .nav-links .dropdown-content {
-                position: static;
-                transform: none;
-                width: 100%;
-                box-shadow: none;
-                background-color: transparent;
-                border-radius: 0;
-                padding-left: 20px;
-            }
-
-            .nav-links .dropdown-content a {
-                padding: 8px 0;
-            }
-
-            .menu-toggle {
-                display: flex;
-                order: 3;
-                margin-left: 15px;
-            }
-
-            .login-signup {
-                order: 2;
-                margin-left: auto;
-            }
-
-            .nav-logo {
-                order: 1;
-            }
-
-            .plans-row {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .plan-card {
-                width: 100%;
-                max-width: 90%;
-                padding: 25px 15px;
-            }
-
-            .plans-heading h2 {
-                font-size: 28px;
-            }
-
-            .plans-heading .subheading {
-                font-size: 16px;
-            }
-
-            .testimonial-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .testimonial-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 18px;
-            }
-
-            .testimonial-box {
-                width: 100%;
-                max-width: 95%;
-                min-width: 0;
-                box-sizing: border-box;
-                padding: 18px 8px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                padding: 10px 2px;
-            }
-
-            .plan-card {
-                padding: 10px 2px;
-            }
-
-            .testimonial-box {
-                padding: 10px 2px;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .reward-amount {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 800px) {
-            .testimonial-box {
-                padding: 10px 4px;
-                min-height: unset !important;
-                height: auto !important;
-                max-width: 100% !important;
-                flex: none !important;
-            }
-
-            .testimonial-box h3 {
-                font-size: 1.05rem;
-                margin-bottom: 6px;
-            }
-
-            .reward-amount {
-                font-size: 0.92rem;
-                margin-bottom: 4px;
-            }
-
-            .progress-bar {
-                margin: 4px 0;
-                height: 5px;
-            }
-
-            .reward-conditions-row {
-                margin-top: 4px;
-            }
-        }
-
-        .mt-40 {
-            margin-top: 40px;
-        }
-
-        .mb-40 {
-            margin-bottom: 40px;
-        }
-
-        .mb-30 {
-            margin-bottom: 30px;
-        }
-
-        .bg-white {
-            background: #fff;
-        }
-
-        .br-20 {
-            border-radius: 20px;
-        }
-
-        .shadow-lg {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .p-40-20 {
-            padding: 40px 20px;
-        }
-
-        .p-40-30 {
-            padding: 40px 30px;
-        }
-
-        .color-primary {
-            color: #0f172a;
-        }
-
-        .color-secondary {
-            color: #64748b;
-        }
-
-        .testimonial-gap {
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .testimonial-box-earned {
-            border-left: 5px solid #10b981;
-            background: #ecfdf5;
-        }
-
-        .testimonial-box-conditions {
-            border-left: 5px solid #f59e0b;
-            background: #fffbeb;
-        }
-
-        .testimonial-box-inprogress {
-            border-left: 5px solid #ef4444;
-            background: #fef2f2;
-        }
-
-        .user-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
-            margin-left: 18px;
-            border: #0f172a solid 2px;
-        }
-    </style>
 </head>
 
-<body>
+<body class="user-dashboard">
     <header class="navbar">
         <div class="nav-logo">
             <a href="main.html"> <img src="Media/logo.png" alt="Afaa Elevate Logo" /></a>
@@ -457,8 +34,39 @@
             <span></span>
             <span></span>
         </div>
-        <div class="user-avatar">F</div>
+        <div class="user-avatar" id="userAvatar" tabindex="0">F
+            <div class="user-panel" id="userPanel">
+                <div class="user-name">Ali Raza</div>
+                <div class="user-email">ali.raza@email.com</div>
+                <div class="ref-label">Referral Code</div>
+                <div class="ref-row">
+                    <span class="ref-code" id="refCode">AFAA1234</span>
+                    <button class="copy-btn" id="copyRefBtn">Copy</button>
+                </div>
+                <button class="logout-btn" id="logoutBtn">Log Out</button>
+            </div>
+        </div>
     </header>
+
+    <div class="plan-title">My Courses</div>
+    <div class="courses-row">
+        <div class="course-box">
+            <div class="thumbnail"> <img src="Media/courses_thumbnails/python.jpg" alt=""></div>
+            <h3 class="course-title">Complete Python Bootcamp</h3>
+            <p class="course-description">
+                Master Python programming from zero to hero. This course covers everything from basic syntax to advanced
+                concepts like OOP, file handling, and libraries like Pandas, NumPy, and more. Perfect for beginners and
+                experienced coders alike who want to solidify their Python skills for real-world applications and
+                projects.
+            </p>
+            <button class="see-more-btn">See More</button>
+            <button class="start-learning-btn">Start Learning</button>
+        </div>
+    </div>
+    </div>
+
+
+
     <section class="container mt-40 mb-40 bg-white br-20 shadow-lg p-40-20">
         <div class="plans-heading mb-40">
             <h2 class="color-primary">🏆 Team Reward Dashboard</h2>
@@ -501,35 +109,48 @@
             <!-- Reward 1: Earned -->
             <div class="testimonial-box testimonial-box-earned">
                 <h3 class="color-primary">Watch <span class="reward-status reward-earned">Earned</span></h3>
-                <div class="reward-amount reward-earned">Rs 1,500</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-earned">Rs 1,500</div>
+                    <div class="referral-count">7/10</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-earned"></div>
                 </div>
-                <div class="color-secondary">Referrals: 150/10 (100%)</div>
+                <div class="color-secondary">Referrals: 7/10 (70%)</div>
             </div>
             <!-- Reward 2: Earned -->
             <div class="testimonial-box testimonial-box-earned">
                 <h3 class="color-primary">Perfume+Wallet <span class="reward-status reward-earned">Earned</span></h3>
-                <div class="reward-amount reward-earned">Rs 3,000</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-earned">Rs 3,000</div>
+                    <div class="referral-count">17/20</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-earned"></div>
                 </div>
-                <div class="color-secondary">Referrals: 150/20 (100%)</div>
+                <div class="color-secondary">Referrals: 18/20 (90%)</div>
             </div>
+
             <!-- Reward 3: Earned -->
             <div class="testimonial-box testimonial-box-earned">
                 <h3 class="color-primary">Powerbank <span class="reward-status reward-earned">Earned</span></h3>
-                <div class="reward-amount reward-earned">Rs 7,000</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-earned">Rs 7,000</div>
+                    <div class="referral-count">34/50</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-earned"></div>
                 </div>
-                <div class="color-secondary">Referrals: 150/50 (100%)</div>
+                <div class="color-secondary">Referrals: 10/50 (100%)</div>
             </div>
             <!-- Reward 4: Conditions Pending -->
             <div class="testimonial-box testimonial-box-conditions">
                 <h3 class="color-primary">Tour Package <span class="reward-status reward-conditions">Conditions
                         Pending</span></h3>
-                <div class="reward-amount reward-conditions">Rs 15,000</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-conditions">Rs 15,000</div>
+                    <div class="referral-count">70/100</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-conditions"></div>
                 </div>
@@ -541,7 +162,10 @@
             <!-- Reward 5: In Progress -->
             <div class="testimonial-box testimonial-box-inprogress">
                 <h3 class="color-primary">Mobile <span class="reward-status reward-inprogress">In Progress</span></h3>
-                <div class="reward-amount reward-inprogress">Rs 50,000</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-inprogress">Rs 50,000</div>
+                    <div class="referral-count">150/300</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-inprogress-50"></div>
                 </div>
@@ -553,7 +177,10 @@
             <!-- Reward 6: In Progress -->
             <div class="testimonial-box testimonial-box-inprogress">
                 <h3 class="color-primary">Bike <span class="reward-status reward-inprogress">In Progress</span></h3>
-                <div class="reward-amount reward-inprogress">Rs 90,000</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-inprogress">Rs 90,000</div>
+                    <div class="referral-count">150/500</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-inprogress-30"></div>
                 </div>
@@ -566,7 +193,10 @@
             <div class="testimonial-box testimonial-box-inprogress">
                 <h3 class="color-primary">Umrah Package <span class="reward-status reward-inprogress">In Progress</span>
                 </h3>
-                <div class="reward-amount reward-inprogress">Rs 2,20,000</div>
+                <div class="referral-row">
+                    <div class="reward-amount reward-inprogress">Rs 2,20,000</div>
+                    <div class="referral-count">150/1000</div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill-inprogress-15"></div>
                 </div>
@@ -593,6 +223,7 @@
                 <h3 class="footer-title">Legal</h3>
                 <a href="#" class="footer-btn">Terms & Conditions</a>
                 <a href="#" class="footer-btn">Privacy Policy</a>
+                <a href="Media/fbr-registration.pdf" class="footer-btn" download>FBR Registration</a>
             </div>
 
             <div class="footer-section social-section">
@@ -609,6 +240,49 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.see-more-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const desc = this.previousElementSibling;
+                desc.classList.toggle('expanded');
+                this.textContent = desc.classList.contains('expanded') ? 'See Less' : 'See More';
+            });
+        });
+
+        // User panel dropdown logic
+        const avatar = document.getElementById('userAvatar');
+        const panel = document.getElementById('userPanel');
+        avatar.addEventListener('click', function(e) {
+            e.stopPropagation();
+            panel.classList.toggle('active');
+        });
+        document.addEventListener('click', function(e) {
+            if (!avatar.contains(e.target)) {
+                panel.classList.remove('active');
+            }
+        });
+        // Copy referral code logic
+        document.getElementById('copyRefBtn').addEventListener('click', function() {
+            const code = document.getElementById('refCode').textContent;
+            navigator.clipboard.writeText(code);
+            this.textContent = 'Copied!';
+            setTimeout(() => { this.textContent = 'Copy'; }, 1200);
+        });
+        // Logout button logic
+        document.getElementById('logoutBtn').onclick = function() {
+            window.location.href = 'login.html';
+        };
+    </script>
+    <!-- Invite a Friend Button -->
+    <button class="invite-friend-btn" id="inviteFriendBtn">
+      <span>🤝 Invite a Friend</span>
+    </button>
+    <script>
+    document.getElementById('inviteFriendBtn').onclick = function() {
+      const msg = encodeURIComponent('Hey! Join me at Afaa Elevate Digital Academy for amazing courses. Use my referral code AFAA1234 to sign up: https://your-website.com');
+      window.open('https://wa.me/?text=' + msg, '_blank');
+    };
+    </script>
 </body>
 
 </html>
